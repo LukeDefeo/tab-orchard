@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Privacy policy for the Tab Orchard Chrome extension.">
+    <title>Privacy policy · Tab Orchard</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Tab Orchard home">
+        <img src="logo.svg" alt="">
+        <span>Tab Orchard</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="privacy.html" aria-current="page">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </header>
+
+    <main class="container policy">
+      <p class="eyebrow">Tab Orchard</p>
+      <h1>Privacy policy</h1>
+      <p class="updated">Effective 10 August 2026</p>
+      <p class="policy-intro">Tab Orchard is a local-first Chrome extension for organising open tabs into trees and linking branches with Chrome tab groups. This policy explains what information the extension handles and how it remains under your control.</p>
+
+      <div class="note">
+        <strong>In short:</strong> Tab Orchard does not send your browsing information to its developer or to third parties. It has no account system, analytics, advertising or developer-operated server.
+      </div>
+
+      <h2>Information the extension handles</h2>
+
+      <h3>Open-tab information</h3>
+      <p>To display and manage your tabs, Tab Orchard processes information Chrome provides about currently open tabs, including tab identifiers, titles, URLs, favicons, window membership, tab order, pinned state and Chrome tab-group membership.</p>
+
+      <h3>Tree and group information</h3>
+      <p>Tab Orchard stores parent-child relationships, collapsed state, group metadata and local settings inside the extension storage associated with your Chrome profile.</p>
+
+      <h3>Recovery information</h3>
+      <p>To recover tree structure after a browser restart or extension reload, Tab Orchard retains a bounded local recovery journal for up to seven days. Recovery records use one-way URL fingerprints rather than readable page titles, URLs or group names. At most 20 window snapshots are retained.</p>
+
+      <h3>Archived groups</h3>
+      <p>If you choose to archive a tab group, Tab Orchard stores the titles, URLs, tab order and tree relationships needed to restore it. An archive remains in local extension storage until you restore or delete it.</p>
+
+      <h3>Optional page previews</h3>
+      <p>Page previews are off by default. If you enable them, Chrome asks you to grant optional site access. Tab Orchard then keeps a bounded set of last-seen page screenshots in memory for the current browser session. Preview images are not written to persistent storage, are not collected from private windows, and are cleared when preview access is disabled or the browser session ends.</p>
+
+      <h2>How information is used</h2>
+      <p>Tab Orchard uses this information only to provide its user-facing tab organisation, navigation, grouping, preview, archive and recovery features. It does not use browsing information for advertising, profiling, credit decisions or any unrelated purpose.</p>
+
+      <h2>Storage and transmission</h2>
+      <ul>
+        <li>Extension state is stored locally in the Chrome profile using Chrome’s extension storage APIs.</li>
+        <li>Tab Orchard does not transmit extension data to the developer or to a developer-operated service.</li>
+        <li>Tab Orchard does not sell or share extension data with third parties.</li>
+        <li>Tab Orchard contains no analytics SDK, advertising SDK or remotely hosted executable code.</li>
+      </ul>
+
+      <h2>Permissions</h2>
+      <ul>
+        <li><strong>Tabs:</strong> reads and manages currently open tabs so it can display, organise, activate, move and close them.</li>
+        <li><strong>Tab groups:</strong> discovers and manages Chrome tab groups linked to tree branches.</li>
+        <li><strong>Web navigation:</strong> identifies when a webpage creates a new tab and records the source-target relationship.</li>
+        <li><strong>Storage:</strong> stores tree state, settings, archives and recovery information locally.</li>
+        <li><strong>Side panel:</strong> displays the tab-tree interface in Chrome’s side panel.</li>
+        <li><strong>Active tab:</strong> provides a temporary user-initiated grant used for supported previews.</li>
+        <li><strong>Optional site access:</strong> requested only when you enable automatic page previews.</li>
+      </ul>
+
+      <h2>Your choices and deletion</h2>
+      <p>You can disable preview access from Tab Orchard’s settings, restore or delete archived groups, and remove the extension at any time. Removing the extension removes its local extension storage from the Chrome profile. Chrome also lets you review or revoke optional site access from the extension’s details page.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>If Tab Orchard’s information practices change, this page will be updated before a release using those practices is published. Material changes will also be disclosed in the extension or its Chrome Web Store listing where required.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about Tab Orchard or this policy can be submitted through the <a href="https://github.com/LukeDefeo/tab-orchard/issues">public support tracker</a>.</p>
+
+      <h2>This website</h2>
+      <p>This informational website is hosted by GitHub Pages. Visiting it is subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s privacy statement</a>. The website itself uses no cookies, analytics or advertising.</p>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Tab Orchard</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+      </div>
+    </footer>
+  </body>
+</html>
