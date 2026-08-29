@@ -23,7 +23,7 @@
     <main class="container policy">
       <p class="eyebrow">Tab Orchard</p>
       <h1>Privacy policy</h1>
-      <p class="updated">Effective 10 August 2026</p>
+      <p class="updated">Effective 29 August 2026</p>
       <p class="policy-intro">Tab Orchard is a local-first Chrome extension for organising open tabs into trees and linking branches with Chrome tab groups. This policy explains what information the extension handles and how it remains under your control.</p>
 
       <div class="note">
@@ -35,8 +35,14 @@
       <h3>Open-tab information</h3>
       <p>To display and manage your tabs, Tab Orchard processes information Chrome provides about currently open tabs, including tab identifiers, titles, URLs, favicons, window membership, tab order, pinned state and Chrome tab-group membership.</p>
 
-      <h3>Tree and group information</h3>
-      <p>Tab Orchard stores parent-child relationships, collapsed state, group metadata and local settings inside the extension storage associated with your Chrome profile.</p>
+      <h3>Tree, group and Section information</h3>
+      <p>Tab Orchard stores parent-child relationships, collapsed state, Chrome group metadata, user-created Section names, automatic group-assignment URL patterns and local settings inside the extension storage associated with your Chrome profile.</p>
+
+      <h3>Notes and one-tab rules</h3>
+      <p>If you create a note, Tab Orchard stores the note text, a cleaned or normalised matching address, the address used to reopen the page, and limited source details such as its title and favicon. One-tab rules similarly store their selected page, website or custom URL pattern. These records remain local until you delete them. Persistent notes are not created or displayed in private windows.</p>
+
+      <h3>Recently Closed</h3>
+      <p>If Recently Closed is enabled, Tab Orchard locally keeps up to 25 recently closed tab records, including the title, URL, favicon and former tree or Chrome-group context needed to reopen them. The default retention is seven days; Settings lets you disable the feature, select a retention period from one to 30 days, exclude domains and clear the stored records. If previews are enabled, a recently closed screenshot expires after 30 minutes.</p>
 
       <h3>Recovery information</h3>
       <p>To recover tree structure after a browser restart or extension reload, Tab Orchard retains a bounded local recovery journal for up to seven days. Recovery records use one-way URL fingerprints rather than readable page titles, URLs or group names. At most 20 window snapshots are retained.</p>
@@ -45,14 +51,20 @@
       <p>If you choose to archive a tab group, Tab Orchard stores the titles, URLs, tab order and tree relationships needed to restore it. An archive remains in local extension storage until you restore or delete it.</p>
 
       <h3>Optional page previews</h3>
-      <p>Page previews are off by default. If you enable them, Chrome asks you to grant optional site access. Tab Orchard then keeps a bounded set of last-seen page screenshots in memory for the current browser session. Preview images are not written to persistent storage, are not collected from private windows, and are cleared when preview access is disabled or the browser session ends.</p>
+      <p>No screenshots are captured until you choose Enable previews and approve Chrome’s optional site-access request. Tab Orchard then keeps a bounded set of last-seen page screenshots in extension session storage for the current browser session. Preview images are not collected from private windows or synced, and are cleared when the browser session ends. Hiding the preview pane pauses new capture without removing Chrome’s permission; Clear preview cache removes existing images, and site access can be revoked in Chrome.</p>
+
+      <h3>Optional fullscreen auto-hide</h3>
+      <p>If you enable the experimental fullscreen feature, Tab Orchard requests access only to the websites you list, or to all websites if you explicitly choose that option. It dynamically attaches a small listener that observes only whether the page enters or leaves fullscreen. It does not inspect the video, page content, account or viewing history. If enabled, a temporary restore button may be shown after fullscreen only when Chrome confirms that Tab Orchard closed its side panel.</p>
+
+      <h3>Diagnostics</h3>
+      <p>Optional fullscreen and quick-picker diagnostics stay in local extension storage. They record feature state, Chrome API outcomes, timings, and tab or window identifiers needed to investigate behavior. They do not record URLs, page titles, note text, screenshots or page content, and can be cleared from Settings.</p>
 
       <h2>How information is used</h2>
-      <p>Tab Orchard uses this information only to provide its user-facing tab organisation, navigation, grouping, preview, archive and recovery features. It does not use browsing information for advertising, profiling, credit decisions or any unrelated purpose.</p>
+      <p>Tab Orchard uses this information only to provide and improve its user-facing tab organisation, navigation, grouping, note, preview, archive, Recently Closed and recovery features. It does not use browsing information for advertising, profiling, credit decisions or any unrelated purpose.</p>
 
       <h2>Storage and transmission</h2>
       <ul>
-        <li>Extension state is stored locally in the Chrome profile using Chrome’s extension storage APIs.</li>
+        <li>Extension state is stored locally in the Chrome profile using Chrome’s extension storage APIs. Tab Orchard does not use Chrome Sync for this data.</li>
         <li>Tab Orchard does not transmit extension data to the developer or to a developer-operated service.</li>
         <li>Tab Orchard does not sell or share extension data with third parties.</li>
         <li>Tab Orchard contains no analytics SDK, advertising SDK or remotely hosted executable code.</li>
@@ -63,14 +75,18 @@
         <li><strong>Tabs:</strong> reads and manages currently open tabs so it can display, organise, activate, move and close them.</li>
         <li><strong>Tab groups:</strong> discovers and manages Chrome tab groups linked to tree branches.</li>
         <li><strong>Web navigation:</strong> identifies when a webpage creates a new tab and records the source-target relationship.</li>
-        <li><strong>Storage:</strong> stores tree state, settings, archives and recovery information locally.</li>
+        <li><strong>Scripting:</strong> dynamically attaches the fullscreen-state listener only to websites approved for the optional fullscreen experiment.</li>
+        <li><strong>Storage:</strong> stores tree state, settings, notes, rules, archives, Recently Closed metadata, diagnostics and recovery information locally.</li>
         <li><strong>Side panel:</strong> displays the tab-tree interface in Chrome’s side panel.</li>
         <li><strong>Active tab:</strong> provides a temporary user-initiated grant used for supported previews.</li>
-        <li><strong>Optional site access:</strong> requested only when you enable automatic page previews.</li>
+        <li><strong>Optional site access:</strong> requested only when you enable previews or approve websites for the fullscreen experiment.</li>
       </ul>
 
       <h2>Your choices and deletion</h2>
-      <p>You can disable preview access from Tab Orchard’s settings, restore or delete archived groups, and remove the extension at any time. Removing the extension removes its local extension storage from the Chrome profile. Chrome also lets you review or revoke optional site access from the extension’s details page.</p>
+      <p>You can pause previews and clear their cache, disable or clear Recently Closed, delete notes and one-tab rules, remove automatic group patterns, clear diagnostics, restore or delete archived groups, and remove the extension at any time. Chrome also lets you review or revoke optional site access from the extension’s details page. Removing the extension removes its local extension storage from the Chrome profile.</p>
+
+      <h2>Chrome Web Store Limited Use</h2>
+      <p>Tab Orchard’s use of information received from Chrome APIs complies with the Chrome Web Store User Data Policy, including its Limited Use requirements. Information is used only for Tab Orchard’s disclosed user-facing tab-management features, is not transferred for advertising or unrelated purposes, and is not made available to the developer or third parties for humans to read.</p>
 
       <h2>Changes to this policy</h2>
       <p>If Tab Orchard’s information practices change, this page will be updated before a release using those practices is published. Material changes will also be disclosed in the extension or its Chrome Web Store listing where required.</p>
